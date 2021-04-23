@@ -168,6 +168,27 @@ namespace CSBasic
             output3 += " World";
             output3 = output3 + "?!";
             Console.WriteLine(output3);
+
+
+            int _int = 284;
+            long _long = 4235252525252;
+            float _float=6.234F;
+            double _double = 52.234;
+            char _char = '귤';
+            string _string = "문자열";
+            Console.WriteLine(_int.GetType());//System.Int32
+            Console.WriteLine(_long.GetType());//System.Int64
+            Console.WriteLine(_float.GetType());//System.Single
+            Console.WriteLine(_double.GetType());//System.Double
+            Console.WriteLine(_char.GetType());//System.Char
+            Console.WriteLine(_string.GetType());//System.String
+
+
+
+
+
+
+
         }
     }
 }
