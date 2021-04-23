@@ -11,6 +11,7 @@ namespace CSBasic
     {
         //var 키워드는 지역변수로만 사용 가능하다
         //var name="함형연";
+        //var something = "!@!@!@";
 
         static void Main(string[] args)
         {
@@ -183,6 +184,13 @@ namespace CSBasic
             Console.WriteLine(_char.GetType());//System.Char
             Console.WriteLine(_string.GetType());//System.String
 
+
+            var somea = "집가고싶다";
+            var someb = 42;
+            var somec = 3.14159262;
+            Console.WriteLine(somea.GetType());
+            Console.WriteLine(someb.GetType());
+            Console.WriteLine(somec.GetType());
 
 
 
