@@ -47,7 +47,28 @@ namespace CSBasic3
             {
                 Console.WriteLine(item);
             }
-            
+            for (i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < i + 1; j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+
+            for (i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10-i-1; j++)
+                {
+                    Console.Write(" ");
+                }
+                for (int j = 0; j <i+1; j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+
 
 
 
