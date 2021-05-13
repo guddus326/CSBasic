@@ -42,6 +42,13 @@ namespace CSBasic3
                 Console.WriteLine(intArray3[k-1]);
             }
 
+            string[] fruits = { "사과","배","딸기","바나나","오렌지" };
+            foreach(var item in fruits)
+            {
+                Console.WriteLine(item);
+            }
+            
+
 
 
         }
