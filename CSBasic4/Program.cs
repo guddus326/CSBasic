@@ -6,6 +6,16 @@ using System.Threading.Tasks;
 
 namespace CSBasic4
 {
+    class MyMath
+    {
+        //int somenumber = 42;
+        public static double PI = 3.141592;
+        public static void Greeting()
+        {
+            //Console.WriteLine(somenumber);
+            Console.WriteLine("Greeting!");
+        }
+    }
     /*class Math
     {
 
@@ -61,11 +71,11 @@ namespace CSBasic4
 
             List<int> list = new List<int>() {52,273,32,64 };
 
-            foreach (var item in list)
+            /*foreach (var item in list)
             {
                 Console.WriteLine("Count : "+list.Count+ "\t item"+item);
                 list.Remove(item);
-            }
+            }*/
 
 
             Console.WriteLine(Math.Abs(-52273));
@@ -75,6 +85,17 @@ namespace CSBasic4
             Console.WriteLine(Math.Max(52,273));
             Console.WriteLine(Math.Min(52,273));
 
+            Product product = new Product();
+            product.name = "감자";
+            product.price = 2000;
+
+            Console.WriteLine(product.name + ":" + product.price + "원");
+
+            Product productA = new Product() { name="짜장면",price=5500};
+            Product productB = new Product() { name = "짬뽕", price = 8000 };
+            Product productC = new Product() { name = "탕수육" };
+            Product productD = new Product() { price = 9999999 };
+            Product productE = new Product() { price = 30000, name = "양장피"};
 
 
 
