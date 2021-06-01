@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class FormMain : Form
     {
-        public Form1()
+        public FormMain()
         {
             InitializeComponent();
+        }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            this.Opacity = trackBar2.Value / 100.0;
         }
     }
 }
