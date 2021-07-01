@@ -4,6 +4,7 @@ namespace CSBasic5
 {
     class Program
     {
+
         class Test
         {
             // Method Signature 
@@ -43,6 +44,9 @@ namespace CSBasic5
             Console.WriteLine(me.Multi(52, 273));
             Console.WriteLine(me.Multi(103, 32));
             me.Print();
+
+            Test test = new Test();
+            Console.WriteLine(test.Sum(1, 100));
         }
     }
 }
