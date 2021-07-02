@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CSBasic5
 {
@@ -224,6 +225,8 @@ namespace CSBasic5
             t.value = 30;
             TestSome.change(t);
             Console.WriteLine(t.value);
+
+            Console.WriteLine(Fibonacci.Get(10000));
         }
 
 
@@ -239,6 +242,28 @@ namespace CSBasic5
         public static void change(TestSome input)
         {
             input.value = 20;
+
+        }
+    }
+    class Fibonacci
+    {
+        private static Dictionary<int, long> memo = new Dictionary<int, long>();
+        public static int count = 0;
+        public static long Get(int i)
+        {
+            count++;
+            Console.WriteLine(count);
+            if (i < 0) { return 0; }
+            if (i ==1) { return 1; }
+            if (memo.ContainsKey(i))
+            {
+                return memo[i];
+            }
+            else
+            {
+                memo[i] = Get(i - 2) + Get(i - 1);
+                return memo[i];
+            }
 
         }
     }
