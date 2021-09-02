@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,20 @@ namespace CSBasic8
 {
     class Program
     {
+        class Parent { }
+        class Child : Parent, IDisposable, IComparable
+        {
+            public int CompareTo(object obj)
+            {
+                throw new NotImplementedException();
+            }
+
+            public void Dispose()
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         class TestClass : IBasic
         {
             public int TestProperty 
@@ -21,7 +36,6 @@ namespace CSBasic8
                 return 0;
             }
         }
-
         class Dummy : IDisposable
         {
             public void Dispose()
@@ -46,13 +60,37 @@ namespace CSBasic8
         }
         static void Main(string[] args)
         {
-            IBasic basic = new TestClass();
+            File.WriteAllText(@"C:\Users\s2019\Desktop\test.txt", "안녕하세요");
+            Console.WriteLine(File.ReadAllText(@"C:\Users\s2019\Desktop\test.txt"));
 
+            using (StreamWriter writer = new StreamWriter(@"C:\Users\s2019\Desktop\test2.txt"))
+            {
+                writer.WriteLine("안녕하세요");
+                writer.WriteLine("streamwriter 클래스 사용해서");
+                writer.WriteLine("글쓰기");
+                for (int i = 0; i < 10; i++)
+                    writer.WriteLine("반복문-" + i);
+            }
+
+            using (StreamReader reader = new StreamReader(@"C:\Users\s2019\Desktop\test2.txt"))
+            {
+                string line;
+                while ((line=reader.ReadLine())!=null)
+                {
+                    Console.WriteLine(line);
+                }
+            }
+
+            Child child = new Child();
+            Parent childParent = new Child();
+            IDisposable childDisposable = new Child();
+            IComparable childComparable = new Child();
+
+            IBasic basic = new TestClass();
             using(Dummy d=new Dummy())
             {
                 Console.WriteLine("뭔가 했습니다.");
             }
-
             List<Product> list = new List<Product>()
             {
                 new Product(){Name="고구마",Price=1500},
