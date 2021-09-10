@@ -25,10 +25,7 @@ namespace CSBasic10
                 new Product(){Name="고구마", Price=600}
             };
             //정렬
-            products.Sort((x,y)=> 
-            {
-                return x.Price.CompareTo(y.Price);
-            });
+            products.Sort((x,y)=> x.Price.CompareTo(y.Price));
 
 
             //출력
