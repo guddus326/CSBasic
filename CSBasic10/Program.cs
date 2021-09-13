@@ -2,12 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CSBasic10
 {
     class Program
     {
+        public static void TestMethod()
+        {
+            for(int i = 0; i < 1000; i++)
+            {
+                Console.Write("A");
+            }
+        }
+
         public delegate void SendString(string message);
         public static void Hello(string message)
         {
@@ -26,6 +35,22 @@ namespace CSBasic10
         }
         static void Main(string[] args)
         {
+            Thread threadA = new Thread(TestMethod);
+            Thread threadB = new Thread(delegate ()
+              {
+                  for (int i = 0; i < 1000; i++)
+                  {
+                      Console.Write("B");
+                  }
+              });
+
+            Thread threadC = new Thread(delegate ()
+            {
+                for (int i = 0; i < 1000; i++)
+                {
+                    Console.Write("C");
+                }
+            });
             SendString sayHello, sayGoodbye, multiDelegate;
             sayHello = Hello;
             sayGoodbye = GoodBye;
